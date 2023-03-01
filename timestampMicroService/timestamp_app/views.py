@@ -5,7 +5,7 @@ from .models import user_timestamp
 # Create your views here.
 '''
 
-
+from datetime import datetime
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -17,8 +17,9 @@ class createtimestamp(APIView):
         # Extract the user ID and email address from the request data
         action = request.data.get('action')
         email = request.data.get('email')
-
-        timestamp = user_timestamp.objects.create(action=action, email=email)
+        created_date = datetime.now().date()
+        created_time = datetime.now().time()
+        timestamp = user_timestamp.objects.create(action=action, email=email, created_date=created_date, created_time=created_time)
         serializer = Timestampserializer(timestamp)
 
         # Return a JSON response indicating success

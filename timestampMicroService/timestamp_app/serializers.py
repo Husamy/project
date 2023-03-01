@@ -4,4 +4,4 @@ from .models import user_timestamp
 class Timestampserializer (serializers.ModelSerializer):
     class Meta:
         model = user_timestamp
-        fields = ('id' , 'action' , 'email' ,'created_date','created_time') 
+        fields = ('id', 'action', 'email', 'created_date', 'created_time')

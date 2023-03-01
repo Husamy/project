@@ -1,0 +1,14 @@
+<mat-toolbar color="pink" class="navbar">
+    <img src="./assets/images/logo.png" alt="Your Application Logo" height="30" class="logo" />
+    <span>Dashboard</span>
+    <span class="example-spacer"></span>
+    <div class="nav-buttons">
+      <ng-container *ngIf="isLoggedIn; else loginButtons">
+        <button mat-raised-button (click)="logout()" class="logout-button">Logout</button>
+      </ng-container>
+      <ng-template #loginButtons>
+        <button mat-raised-button color="primary" [routerLink]="'/login'" class="login-button">Login</button>
+        <button mat-raised-button color="warn" [routerLink]="'/sign'" class="register-button">Register</button>
+      </ng-template>
+    </div>
+  </mat-toolbar>

@@ -5,9 +5,9 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=timestamp
+      - POSTGRES_USER=husamorbi
+      - POSTGRES_PASSWORD=password
     networks:
       - pfemicroservice
     ports:
@@ -23,7 +23,11 @@ services:
       - db
     networks:
       - pfemicroservice
-
+  adminer:
+    image: adminer
+    ports:
+      - 8089:8080
+    restart: unless-stopped
 networks:
   pfemicroservice:
     driver: bridge
