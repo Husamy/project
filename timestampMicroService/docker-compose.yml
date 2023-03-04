@@ -5,14 +5,14 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=timestamp
-      - POSTGRES_USER=husamorbi
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     networks:
       - pfemicroservice
     ports:
-      - 5434:5432
-  web:
+      - 5433:5432
+  timestamp:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

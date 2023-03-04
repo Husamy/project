@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'timestamp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'timestamp',
-        'USER': 'husamorbi',
-        'PASSWORD': 'password',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'db',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
