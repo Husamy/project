@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5434:5432
+  authuser:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/authuser
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+  adminer:
+    image: adminer
+    ports:
+      - 8090:8080
+    restart: unless-stopped

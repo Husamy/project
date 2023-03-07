@@ -1,9 +1,3 @@
-'''from django.shortcuts import render
-from .serializers import Timestampserializer
-from rest_framework import generics
-from .models import user_timestamp
-# Create your views here.
-'''
 
 from datetime import datetime
 from rest_framework import generics

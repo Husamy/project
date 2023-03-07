@@ -10,4 +10,4 @@ class user_timestamp(models.Model):
     created_time = models.TimeField()
 
     def __str__(self) -> str:
-        return self.email;
+        return self.email
